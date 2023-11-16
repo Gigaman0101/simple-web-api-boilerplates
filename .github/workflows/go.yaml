@@ -2,9 +2,11 @@ name: Go
 
 on: [push]
 
+defaults:
+  run:
+    working-directory: ./app.
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,15 +21,15 @@ jobs:
       # You can test your matrix by printing the current Go version
       - name: Display Go version
         run: go version
-      - name: Change dicectory to GO 
-        run: cd ./go
       - name: Install dependencies
+        # working-directory: ./go
         run: |
           pwd
           go get .
           go get example.com/octo-examplemodule
           go get example.com/octo-examplemodule@v1.3.4
       - name: Build
+        # working-directory: ./go
         run: go build -v ./...
       - name: Test with the Go CLI
         run: go test
