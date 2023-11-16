@@ -23,6 +23,7 @@ jobs:
         run: cd ./go
       - name: Install dependencies
         run: |
+          pwd
           go get .
           go get example.com/octo-examplemodule
           go get example.com/octo-examplemodule@v1.3.4
