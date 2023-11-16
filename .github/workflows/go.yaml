@@ -4,7 +4,7 @@ on: [push]
 
 defaults:
   run:
-    working-directory: ./app.
+    working-directory: ./go
 jobs:
   build:
     runs-on: ubuntu-latest
